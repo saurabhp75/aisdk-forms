@@ -25,7 +25,7 @@ export default function Message({
 
   return (
     <div
-      className={`whitespace-pre-wrap my-2 p-3 rounded-lg shadow
+      className={`whitespace-pre-wrap my-2 p-3 rounded-lg shadow text-gray-800
         ${isUser ? "bg-blue-100 text-right ml-10" : "bg-gray-100 text-left mr-10"}`}
     >
       <div className="mb-1 text-xs text-gray-500">{date}</div>
