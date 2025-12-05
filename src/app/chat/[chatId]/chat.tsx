@@ -51,6 +51,7 @@ import {
   SourcesTrigger,
 } from "@/components/ai-elements/sources";
 import type { MyUIMessage } from "@/util/chat-schema";
+import { ModeToggle } from "@/components/theme-toggle";
 
 const models = [
   {
@@ -144,6 +145,7 @@ export default function ChatComponent({
   return (
     <div className="max-w-4xl mx-auto p-6 relative size-full h-screen">
       <div className="flex flex-col h-full">
+        <ModeToggle />
         <Conversation className="h-full">
           <ConversationContent>
             {messages.map((message) => (
