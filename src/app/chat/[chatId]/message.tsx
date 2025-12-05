@@ -1,4 +1,5 @@
 import type { ChatStatus } from "ai";
+import { useEffect, useState } from "react";
 import type { MyUIMessage } from "@/util/chat-schema";
 
 export default function Message({
@@ -18,9 +19,14 @@ export default function Message({
     messageId?: string;
   }) => void;
 }) {
-  const date = message.metadata?.createdAt
-    ? new Date(message.metadata.createdAt).toLocaleString()
-    : "";
+  const [date, setDate] = useState<string>("");
+
+  useEffect(() => {
+    if (message.metadata?.createdAt) {
+      setDate(new Date(message.metadata.createdAt).toLocaleString());
+    }
+  }, [message.metadata?.createdAt]);
+
   const isUser = message.role === "user";
 
   return (
