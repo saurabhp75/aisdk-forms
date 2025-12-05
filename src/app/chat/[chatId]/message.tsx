@@ -1,3 +1,5 @@
+"use client";
+
 import type { ChatStatus } from "ai";
 import { useEffect, useState } from "react";
 import type { MyUIMessage } from "@/util/chat-schema";
